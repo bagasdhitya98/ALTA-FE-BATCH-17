@@ -70,3 +70,12 @@ const statement_5: boolean = 12 > 17;
 // console.log(statement_5 || statement_2);
 // console.log(statement_3 || statement_5);
 // console.log(statement_2 || statement_1);
+
+// --- SHORTHAND ARITHMETIC
+let numbVar: number = 20;
+
+numbVar += 20; // numbVar = numbVar + 20
+numbVar -= 20; // numbVar = numbVar - 20
+numbVar *= 20; // numbVar = numbVar * 20
+numbVar /= 20; // numbVar = numbVar / 20
+numbVar %= 20; // numbVar = numbVar % 20
