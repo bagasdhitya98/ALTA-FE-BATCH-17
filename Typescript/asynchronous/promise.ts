@@ -36,22 +36,31 @@ function generateRandom() {
 // --- AWAIT ---
 
 async function playGacha() {
-  await generateRandom()
-    .then((response) => {
-      console.log(
-        "Hasil menunjukkan bahwa, ini merupakan bilangan genap : ",
-        response
-      );
-    })
-    .catch((error) => {
-      console.log(
-        "Hasil menunjukkan bahwa, ini merupakan bilangan ganjil : ",
-        error
-      );
-    })
-    .finally(() => {
-      console.log("------- GACHA SELESAI --------");
-    });
+  //   await generateRandom()
+  //     .then((response) => {
+  //       console.log(
+  //         "Hasil menunjukkan bahwa, ini merupakan bilangan genap : ",
+  //         response
+  //       );
+  //     })
+  //     .catch((error) => {
+  //       console.log(
+  //         "Hasil menunjukkan bahwa, ini merupakan bilangan ganjil : ",
+  //         error
+  //       );
+  //     })
+  //     .finally(() => {
+  //       console.log("------- GACHA SELESAI --------");
+  //     });
+
+  try {
+    const response = await generateRandom();
+    console.log(response);
+  } catch (error) {
+    console.log(error);
+  } finally {
+    console.log("------- GACHA SELESAI --------");
+  }
 }
 
 playGacha();
