@@ -28,9 +28,13 @@ function customer(message: string) {
   if (message === "Pesanan sudah sesuai aplikasi ya, Kak?") {
     console.log("Pesanan sudah sesuai, Kak");
   }
+
   setTimeout(() => {
     console.log("Sudah pak. Terima kasih ya");
   }, 3000);
+  setTimeout(() => {
+    console.log("Tes");
+  }, 2000);
 }
 
 driver(customer);
