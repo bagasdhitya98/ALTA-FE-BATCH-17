@@ -16,19 +16,42 @@ function generateRandom() {
   });
 }
 
-generateRandom()
-  .then((response) => {
-    console.log(
-      "Hasil menunjukkan bahwa, ini merupakan bilangan genap : ",
-      response
-    );
-  })
-  .catch((error) => {
-    console.log(
-      "Hasil menunjukkan bahwa, ini merupakan bilangan ganjil : ",
-      error
-    );
-  })
-  .finally(() => {
-    console.log("------- GACHA SELESAI --------");
-  });
+// generateRandom()
+//   .then((response) => {
+//     console.log(
+//       "Hasil menunjukkan bahwa, ini merupakan bilangan genap : ",
+//       response
+//     );
+//   })
+//   .catch((error) => {
+//     console.log(
+//       "Hasil menunjukkan bahwa, ini merupakan bilangan ganjil : ",
+//       error
+//     );
+//   })
+//   .finally(() => {
+//     console.log("------- GACHA SELESAI --------");
+//   });
+
+// --- AWAIT ---
+
+async function playGacha() {
+  await generateRandom()
+    .then((response) => {
+      console.log(
+        "Hasil menunjukkan bahwa, ini merupakan bilangan genap : ",
+        response
+      );
+    })
+    .catch((error) => {
+      console.log(
+        "Hasil menunjukkan bahwa, ini merupakan bilangan ganjil : ",
+        error
+      );
+    })
+    .finally(() => {
+      console.log("------- GACHA SELESAI --------");
+    });
+}
+
+playGacha();
