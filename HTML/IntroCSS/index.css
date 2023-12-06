@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Poppins-Medium' ;
+    src: url('../IntroCSS/font/Poppins/Poppins-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../IntroCSS/font/Poppins/Poppins-Regular.ttf');
+}
+
+body {
+    font-family: 'Poppins-Regular';
+    margin: 20px;
+}
+
+.clickable {
+    padding: 10px;
+    width: 200px;
+    height: 60px;
+    border: 1px;
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+}
+
+.clickable:hover {
+    background-color: darkorange;
+}
+
+.gambar-sapi {
+    width: 500px;
+    height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-blend-mode: color-burn;
+    background-image: url('../IntroCSS/assets/sapi.jpeg');
+}
+
+.example-transition {
+    width: 700px;
+    height:30px;
+    background-color: blue;
+    transition: 4s ease-in-out;
+}
+
+.example-shape {
+    width: 600px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+    background-color: blue;
+    color: white
+}
+
+.random-external h1{
+    color:yellow
+}
+
+.random-external h2{
+    color:purple
+}
+
+.random-external h3{
+    color:aqua
+}
+
+.grouping {
+    color: red;
+}
+
+.grouping p, strong {
+    color: green
+}
+
+#shape1 {
+    width: 100%;
+    height: 50px;
+    background-color: gold;
+}
+
+#shape2 {
+    width: 800px;
+    height: 50px;
+    background-color: aquamarine;
+}
