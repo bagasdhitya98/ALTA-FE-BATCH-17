@@ -3,6 +3,7 @@ import { Component } from "react";
 import Card from "./components/Card";
 import Modal from "./components/Modal";
 import Random from "./components/Random";
+import Layout from "./components/Layout";
 
 import data from "./dummy/foods.json";
 
@@ -43,16 +44,29 @@ class App extends Component<CountState> {
     this.setState({ mode: !mode });
   }
 
+  // Fase Mounting
+  componentDidMount() {
+    console.log("Component Did Mount");
+  }
+
+  // Fase Updating
+  componentDidUpdate(prevState: CountState) {
+    const { count } = this.state;
+    if (prevState.count !== count) {
+      console.log("Component Did Update");
+    }
+  }
+
+  // Fase Unmounting
+  componentWillUnmount() {
+    console.log("Component Will Unmount");
+  }
+
   render() {
     const { count, mode, visibility } = this.state;
-    console.log("data : ", data);
 
     return (
-      <section
-        className={`w-screen h-max flex flex-col justify-center items-center ${
-          mode === true ? "bg-slate-500" : "bg-white"
-        }`}
-      >
+      <Layout mode={mode}>
         <div className="text-red-500">Hello world, this is tailwind effect</div>
         <div className="flex gap-x-5 my-10">
           <button
@@ -127,7 +141,7 @@ class App extends Component<CountState> {
         ) : (
           <></>
         )}
-      </section>
+      </Layout>
     );
   }
 }
