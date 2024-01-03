@@ -2,7 +2,7 @@ import { Component } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Login from "./pages/login";
-import News from "./pages/news";
+import Product from "./pages/product";
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
       <BrowserRouter>
         <Routes>
           <Route element={<Login />} path="/news/login" />
-          <Route element={<News />} path="/" />
+          <Route element={<Product />} path="/" />
         </Routes>
       </BrowserRouter>
     );

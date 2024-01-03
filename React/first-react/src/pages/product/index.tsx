@@ -1,18 +1,18 @@
 import { Component } from "react";
 import { withRouter } from "../../withRouter";
 
-interface NewsProps {
+interface ProductProps {
   location?: any;
 }
 
-export class News extends Component<NewsProps> {
+export class Product extends Component<ProductProps> {
   render() {
     const { location } = this.props;
     console.log("result of passing username : ", location?.state?.username);
     console.log("result of passing password : ", location?.state?.password);
 
-    return <div>News</div>;
+    return <div>Product</div>;
   }
 }
 
-export default withRouter(News);
+export default withRouter(Product);
