@@ -11,13 +11,13 @@ interface ProductProps {
 }
 
 interface ProductState {
-  data?: [];
-  content?: any;
-  isOpen?: boolean;
+  data: Array<any>;
+  content: any;
+  isOpen: boolean;
 }
 
 export class Product extends Component<ProductProps, ProductState> {
-  state = {
+  state: ProductState = {
     data: [],
     content: null,
     isOpen: false,
@@ -38,8 +38,7 @@ export class Product extends Component<ProductProps, ProductState> {
     axios
       .get(`https://65842cef4d1ee97c6bcf27a5.mockapi.io/product/${id}`)
       .then((response) => {
-        this.setState({ isOpen: true });
-        this.setState({ content: response?.data });
+        this.setState({ isOpen: true, content: response?.data });
         console.log("get by id : ", response.data);
       })
       .catch((error) => {
@@ -73,15 +72,13 @@ export class Product extends Component<ProductProps, ProductState> {
             </div>
           )}
         </div>
-        {isOpen === true ? (
+        {isOpen && (
           <Modal onClick={() => this.setState({ isOpen: false })}>
             <div className="p-5">
               <p className="font-semibold text-lg">{content?.product_name}</p>
               <p className="font-medium">{content?.product_description}</p>
             </div>
           </Modal>
-        ) : (
-          <></>
         )}
       </Layout>
     );
