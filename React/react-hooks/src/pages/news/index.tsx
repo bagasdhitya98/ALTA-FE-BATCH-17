@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Button from "../../components/Button";
 import Input from "../../components/Input";
@@ -6,6 +6,18 @@ import Input from "../../components/Input";
 const News = () => {
   const [count, setCount] = useState<number>(0);
   const [mode, setMode] = useState<boolean>(false);
+
+  useEffect(() => {
+    // fase mounting
+    console.log("Component Did Mount");
+
+    // fase unmounting
+    return () => {
+      console.log("Unmounting");
+    };
+
+    // jika ditambahkan state, maka akan berfungsi selayaknya componentDidUpdate
+  }, [count]);
 
   return (
     <section
