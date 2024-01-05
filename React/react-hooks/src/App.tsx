@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
 
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
@@ -7,6 +8,8 @@ import Count from "./pages/count";
 import News from "./pages/news";
 
 const App = () => {
+  axios.defaults.baseURL = "https://newsapi.org/v2/";
+
   return (
     <BrowserRouter>
       <Routes>
