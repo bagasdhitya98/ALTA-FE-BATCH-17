@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useModeContext } from "../../context/modeContext";
+
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -10,6 +12,8 @@ import Swal from "sweetalert2";
 const News = () => {
   const navigate = useNavigate();
   const apiKey = import.meta.env.VITE_NEWS_API_KEY;
+  const { handleToggle, toggle } = useModeContext();
+
   const [news, setNews] = useState<[]>([]);
   const [category, setCategory] = useState<string>("");
 
@@ -55,7 +59,14 @@ const News = () => {
   }, [category]);
 
   return (
-    <section className="w-screen h-full flex flex-col justify-center items-center">
+    <section
+      className={`w-screen h-full ${
+        toggle ? "bg-slate-700" : "bg-white"
+      } flex flex-col justify-center items-center`}
+    >
+      <div className="my-10">
+        <Button id="mode" title="Switch Mode" onClick={() => handleToggle()} />
+      </div>
       <div className="mt-10 flex space-x-5 w-96">
         <Button
           id="sports"
