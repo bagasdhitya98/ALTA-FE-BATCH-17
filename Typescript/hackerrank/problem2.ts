@@ -1,4 +1,4 @@
-function firstOccurrence(s: string, x: string): number {
+const firstOccurrence = (s: string, x: string): number => {
   const sLength = s.length;
   const xLength = x.length;
 
@@ -16,7 +16,7 @@ function firstOccurrence(s: string, x: string): number {
   }
 
   return -1;
-}
+};
 
 const s: string = "xabcdey";
 const x: string = "ab*de";

@@ -1,4 +1,4 @@
-function countMaxEqual(signalOne: number[], signalTwo: number[]): number {
+const countMaxEqual = (signalOne: number[], signalTwo: number[]): number => {
   let maxEqual: number = 0;
   const n: number = signalOne.length;
   const m: number = signalTwo.length;
@@ -23,7 +23,7 @@ function countMaxEqual(signalOne: number[], signalTwo: number[]): number {
   }
 
   return updateCount;
-}
+};
 
 const signalOne: number[] = [1, 2, 3, 3, 3, 5, 4];
 const signalTwo: number[] = [1, 2, 3, 4, 3, 5, 4];

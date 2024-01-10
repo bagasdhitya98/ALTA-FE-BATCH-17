@@ -1,20 +1,20 @@
-function priceCheck(
+const priceCheck = (
   products: string[],
   productPrices: number[],
   productSold: string[],
   soldPrice: number[]
-): number {
-  const priceMap = new Map<string, number>();
+): number => {
+  const priceMap: { [key: string]: number } = {};
 
   for (let i = 0; i < products.length; i++) {
-    priceMap.set(products[i], productPrices[i]);
+    priceMap[products[i]] = productPrices[i];
   }
 
   let errorCount = 0;
 
   for (let j = 0; j < productSold.length; j++) {
     const product = productSold[j];
-    const expectedPrice = priceMap.get(product);
+    const expectedPrice = priceMap[product];
 
     if (expectedPrice !== undefined && expectedPrice !== soldPrice[j]) {
       errorCount++;
@@ -22,7 +22,7 @@ function priceCheck(
   }
 
   return errorCount;
-}
+};
 
 const products: string[] = ["eggs", "milk", "cheese"];
 const productPrices: number[] = [2.89, 3.29, 5.79];
